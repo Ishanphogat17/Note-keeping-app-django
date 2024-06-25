@@ -10,11 +10,7 @@ COPY requirements.txt .
 # Install dependencies from requirements.txt
 RUN pip install -r requirements.txt
 
-# Copy the current directory contents into the container at /app/backend
 COPY . .
-
-# Create a superuser (replace with your desired username, email, and password)
-RUN python manage.py createsuperuser --noinput --username admin --email admin@example.com
 
 # Apply database migrations
 RUN python manage.py makemigrations
